@@ -60,6 +60,8 @@ class UserController
 
      private void DeleteUser()
     {
+        StampaTabella.VisualizzaUser(_db.GetUsers());
+        Console.WriteLine();
         _db.DeleteUser(_view.DeleteUser());
     }
 
