@@ -1,0 +1,5 @@
+# dependencies
+bin
+obj
+.DS_Store 
+./data/database.db
