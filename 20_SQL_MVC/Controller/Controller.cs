@@ -29,6 +29,12 @@ class UserController
             case "3":
                 SearchUsers();
                 return true;
+            case "4":
+                DeleteUser();
+                return true;
+            case "5":
+                EditUser();
+                return true;
             case "0":
                 _db.CloseConnection();
                 return false;
@@ -47,13 +53,34 @@ class UserController
 
     private void ShowUsers()
     {
-        var user = _db.GetUsers();
-        _view.MostraUsers(user);
+        StampaTabella.VisualizzaUser(_db.GetUsers());
+        Console.WriteLine();
     }
 
     private void SearchUsers()
     {
         var user = _db.GetUsers();
-        _view.FoundUser(_db.SearchUser(user, _view.SearchUser()));
+        
+        StampaTabella.VisualizzaUserSingolo(_db.SearchUser(user, _view.SearchUser()));
+
+        //_view.FoundUser(_db.SearchUser(user, _view.SearchUser()));
     }
+
+
+    private void EditUser()
+    {
+        //TODO: STAMPA TABELLA
+        StampaTabella.VisualizzaUser(_db.GetUsers());
+        Console.WriteLine();
+        Console.WriteLine("Inserisci ID dell'utente da modificare");
+        _db.EditUser(_view.GetInput());
+    }
+
+    private void DeleteUser()
+    {
+        StampaTabella.VisualizzaUser(_db.GetUsers());
+        Console.WriteLine();
+        _db.DeleteUser(_view.DeleteUser());
+    }
+
 }

@@ -60,6 +60,7 @@ class View
     public int SearchUser()
     {
         int id = InputManager.LeggiIntero("inserisci l'id ");
+        return id;
     }
     public string DeleteUser ()
     {
