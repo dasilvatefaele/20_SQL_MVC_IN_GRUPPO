@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\39347\\Documents\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj": {}
+    "C:\\Users\\Dev2\\Documents\\20_SQL-MVC\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\39347\\Documents\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj": {
+    "C:\\Users\\Dev2\\Documents\\20_SQL-MVC\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\39347\\Documents\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj",
+        "projectUniqueName": "C:\\Users\\Dev2\\Documents\\20_SQL-MVC\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj",
         "projectName": "20_SQL_MVC",
-        "projectPath": "C:\\Users\\39347\\Documents\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj",
-        "packagesPath": "C:\\Users\\39347\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\39347\\Documents\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\obj\\",
+        "projectPath": "C:\\Users\\Dev2\\Documents\\20_SQL-MVC\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\20_SQL_MVC.csproj",
+        "packagesPath": "C:\\Users\\Dev2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dev2\\Documents\\20_SQL-MVC\\20_SQL_MVC_IN_GRUPPO\\20_SQL_MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\39347\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dev2\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

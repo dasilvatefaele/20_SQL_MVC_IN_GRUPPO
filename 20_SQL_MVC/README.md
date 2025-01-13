@@ -53,15 +53,15 @@ UTILITIES
 ---
 
 # crea un nuovo branch
-git branch feature/user-management
+git branch feature/stampa-tabella
 # passa al branch appena creato
-git checkout feature/user-management
+git checkout feature/stampa-tabella
 # crea un nuovo branch e passa a esso
-git checkout -b feature/user-management
+git checkout -b feature/stampa-tabella
 # aggiungi i file modificati
 git add . o git add --all
 # esegui il commit delle modifiche
-git commit -m "Implement user registration"
+git commit -m "Implementazione stampa-tabella"
 # esegui le modifiche sul branch principale
-git push origin feature/user-management
+git push origin feature/stampa-tabella
 

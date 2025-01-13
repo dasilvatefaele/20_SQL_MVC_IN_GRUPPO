@@ -49,6 +49,6 @@ class UserController
     private void ShowUsers()
     {
         var user = _db.GetUsers();
-        _view.MostraUsers(user);
+        StampaTabella.VisualizzaUser(user);
     }
 }

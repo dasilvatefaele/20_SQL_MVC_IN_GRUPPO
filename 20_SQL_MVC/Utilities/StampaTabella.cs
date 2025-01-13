@@ -13,7 +13,24 @@ static public class StampaTabella
     // const int COLONNA_SMALL = -10;
     // const int COLONNA_MEDIUM = -20;
     // const int COLONNA_LARGE = -50;
+    static public  void VisualizzaUser(List<User> users)
+    {
+        if (users.Count > 0)
+        {
+            Console.WriteLine($"{"ID", -10}{"Nome", -10}");
+            Console.WriteLine(new string('-', 20));
+            foreach (var user in users)
+            {
+                Console.WriteLine($"{user.id, -10}{user.nome, -10}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Non ci sono users.\n");
+        }
 
+    }
+}
     // static CarrelloAdvancedManager managerCarrello = new CarrelloAdvancedManager();
     // static CasseRepository casseRepository = new CasseRepository();
     // static public void ComeAdmin(List<Prodotto> prodotti)
@@ -35,6 +52,18 @@ static public class StampaTabella
     //         Console.WriteLine("Non ci sono prodotti.\n");
     //     }
     // }
+
+
+    /*
+    
+    ID      NOME
+    -------------
+    1       Carlo
+    2       Roberto
+
+    */
+
+
     // static public void ComeCliente(List<Prodotto> prodotti)
     // {
     
@@ -177,4 +206,4 @@ static public class StampaTabella
     //         Color.Reset();
     //     }
     // }
-}
+

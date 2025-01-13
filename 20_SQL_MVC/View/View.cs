@@ -29,6 +29,7 @@ class View
         foreach (var user in users)
         {
             Console.WriteLine($"{user.nome.ToString()}");
+            //StampaTabella.VisualizzaUser(user);
 
         }
     }
