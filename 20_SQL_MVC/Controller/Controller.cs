@@ -28,6 +28,9 @@ class UserController
                 ShowUsers();
                 return true;
                 break;
+            case "3":
+                //DeleteUser();
+                return true;
             case "0":
                 _db.CloseConnection();
                 return false;
@@ -51,4 +54,10 @@ class UserController
         var user = _db.GetUsers();
         _view.MostraUsers(user);
     }
+
+     private void DeleteUser()
+    {
+        _db.DeleteUser(_view.DeleteUser());
+    }
+
 }

@@ -37,6 +37,13 @@ class Database
 
     }
 
+    //elimina un utente 
+    public void DeleteUser(string id) // eliminare un utente
+    {
+        var command = new SQLiteCommand($"DELETE FROM users WHERE id  = '{id}'", _connection);
+        command.ExecuteNonQuery();
+    }
+
     // ottenere lista utenti, non li stampa, li restituisce solo, perché la stampa appartiene al View
     public List<User> GetUsers() 
     {
