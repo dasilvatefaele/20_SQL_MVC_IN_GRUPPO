@@ -20,7 +20,7 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
-        //Console.WriteLine("3. Elimina user");
+        Console.WriteLine("3. Elimina user");
         Console.WriteLine("0. Esci");
     }
 
@@ -30,6 +30,7 @@ class View
         foreach (var user in users)
         {
             Console.WriteLine($"{user.nome.ToString()}");
+            //StampaTabella.VisualizzaUser(user);
 
         }
     }

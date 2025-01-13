@@ -8,7 +8,7 @@ class Database
     private SQLiteConnection _connection;
     // connessione al database che è privaata perché non deve essere accessibile dall'esterno
     // utilizziamo _ davanti al nome per indicare che è una variabile privata
-    private string path = @"data/database.db";
+    private string path = @"database.db";
 
     public Database() // costruttore della classe database
     {
