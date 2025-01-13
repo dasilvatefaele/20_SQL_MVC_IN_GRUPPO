@@ -32,6 +32,7 @@ class UserController
             case "0":
                 _db.CloseConnection();
                 return false;
+                break;
             default:
                 Console.WriteLine("\nErrore di input.");
                 return true;
