@@ -13,6 +13,8 @@ class Database
     private Database _db;
     private string path = @"data/database.db";
 
+    
+
     public Database() // costruttore della classe database
     {
         if (!File.Exists(path))
@@ -41,6 +43,13 @@ class Database
         var command = new SQLiteCommand($"INSERT INTO users (name) VALUES ('{nome}')", _connection);
         command.ExecuteNonQuery();
 
+    }
+
+    //elimina un utente 
+    public void DeleteUser(string id) // eliminare un utente
+    {
+        var command = new SQLiteCommand($"DELETE FROM users WHERE id  = '{id}'", _connection);
+        command.ExecuteNonQuery();
     }
 
     // ottenere lista utenti, non li stampa, li restituisce solo, perché la stampa appartiene al View

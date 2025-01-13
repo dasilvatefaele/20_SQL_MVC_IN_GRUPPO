@@ -20,6 +20,8 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
+        Console.WriteLine("3. Elimina user");
+        Console.WriteLine("4. Modifica user");
         Console.WriteLine("0. Esci");
     }
 
@@ -29,6 +31,7 @@ class View
         foreach (var user in users)
         {
             Console.WriteLine($"{user.nome.ToString()}");
+            //StampaTabella.VisualizzaUser(user);
 
         }
     }
@@ -46,6 +49,13 @@ class View
         Console.WriteLine("Leggi nome utente:");
         var nome = GetInput();
         return nome;
+    }
+
+    public string DeleteUser ()
+    {
+        Console.WriteLine("Inserisci l'id dell'utente da eliminare:");
+        var id = GetInput();
+        return id;
     }
 
 }

@@ -29,6 +29,9 @@ class UserController
                 return true;
                 break;
             case "3":
+                DeleteUser();
+                return true;
+            case "4":
                 EditUser();
                 return true;
                 break;
@@ -52,12 +55,20 @@ class UserController
     private void ShowUsers()
     {
         var user = _db.GetUsers();
-        _view.MostraUsers(user);
+        StampaTabella.VisualizzaUser(user);
     }
+
+     private void DeleteUser()
+    {
+        _db.DeleteUser(_view.DeleteUser());
+    }
+
 
     private void EditUser()
     {
         //TODO: STAMPA TABELLA
+        StampaTabella.VisualizzaUser(_db.GetUsers());
+        Console.WriteLine();
         Console.WriteLine("Inserisci ID dell'utente da modificare");
         _db.EditUser(_view.GetInput());
     }
