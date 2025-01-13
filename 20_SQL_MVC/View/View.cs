@@ -41,11 +41,22 @@ class View
     }
 
     // legge e restituisce
-    public string AddUser ()
+    public string AddUser()
     {
         Console.WriteLine("Leggi nome utente:");
-        var nome = GetInput();
+        string nome = GetInput();
         return nome;
+    }
+
+    public void FoundUser(User user)
+    {
+        Console.WriteLine($"{user.id} - {user.nome}");
+    }
+
+    public int SearchUser()
+    {
+        int id = InputManager.LeggiIntero("inserisci l'id ");
+        return id;
     }
 
 }

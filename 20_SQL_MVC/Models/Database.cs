@@ -1,6 +1,3 @@
-using System.Data;
-using System.Data.Entity.Core.Common.EntitySql;
-using System.Data.SqlClient;
 using System.Data.SQLite;
 
 class Database
@@ -34,7 +31,6 @@ class Database
     {
         var command = new SQLiteCommand($"INSERT INTO users (name) VALUES ('{nome}')", _connection);
         command.ExecuteNonQuery();
-
     }
 
     // ottenere lista utenti, non li stampa, li restituisce solo, perché la stampa appartiene al View
@@ -59,6 +55,22 @@ class Database
         }
         return users;
     }
+
+
+    public User SearchUser(List<User> lista, int id)
+    {
+
+        foreach (var user in lista)
+        {
+            if (user.id == id)
+            {
+                return user;
+            }
+        }
+
+        return null;
+    }
+
 
     // se la connessione non è chiusa la chiude
     public void CloseConnection()

@@ -23,20 +23,18 @@ class UserController
             case "1":
                 AddUser();
                 return true;
-                break;
             case "2":
                 ShowUsers();
                 return true;
-                break;
+            case "3":
+                SearchUsers();
+                return true;
             case "0":
                 _db.CloseConnection();
                 return false;
-
-                break;
             default:
                 Console.WriteLine("\nErrore di input.");
                 return true;
-                break;
         }
     }
 
@@ -50,5 +48,11 @@ class UserController
     {
         var user = _db.GetUsers();
         _view.MostraUsers(user);
+    }
+
+    private void SearchUsers()
+    {
+        var user = _db.GetUsers();
+        _view.FoundUser(_db.SearchUser(user, _view.SearchUser()));
     }
 }
