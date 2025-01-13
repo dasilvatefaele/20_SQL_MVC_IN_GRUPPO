@@ -28,10 +28,13 @@ class UserController
                 ShowUsers();
                 return true;
                 break;
+            case "3":
+                EditUser();
+                return true;
+                break;
             case "0":
                 _db.CloseConnection();
                 return false;
-
                 break;
             default:
                 Console.WriteLine("\nErrore di input.");
@@ -50,5 +53,12 @@ class UserController
     {
         var user = _db.GetUsers();
         _view.MostraUsers(user);
+    }
+
+    private void EditUser()
+    {
+        //TODO: STAMPA TABELLA
+        Console.WriteLine("Inserisci ID dell'utente da modificare");
+        _db.EditUser(_view.GetInput());
     }
 }

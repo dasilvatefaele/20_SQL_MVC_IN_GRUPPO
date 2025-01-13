@@ -8,6 +8,9 @@ class Database
     private SQLiteConnection _connection;
     // connessione al database che è privaata perché non deve essere accessibile dall'esterno
     // utilizziamo _ davanti al nome per indicare che è una variabile privata
+
+    private View _view;
+    private Database _db;
     private string path = @"data/database.db";
 
     public Database() // costruttore della classe database
@@ -16,6 +19,9 @@ class Database
         {
             SQLiteConnection.CreateFile(path);
         }
+
+        // _db = new Database();
+        // _view = new View(_db);
 
         _connection = new SQLiteConnection($"Data Source={path};Version=3;"); // creiamo una connessione al database
         // _connection = new SQLiteConnection($"Data Source={path};Version=3;"); // creiamo una connessione al database
@@ -67,6 +73,21 @@ class Database
         {
             _connection.Close();
         }
+    }
+
+    public void EditUser(string id)
+    {
+        var command = new SQLiteCommand($"SELECT * FROM users WHERE id = {id}", _connection);
+        var reader = command.ExecuteReader();
+        
+        if (reader != null)
+        {
+            Console.WriteLine("Nuovo nome:");
+            string nuovoNome = Console.ReadLine();
+            command = new SQLiteCommand($"UPDATE users SET name = '{nuovoNome}' WHERE id = {id}",_connection);
+            command.ExecuteNonQuery();
+        }
+        reader.Close();
     }
 
 }
