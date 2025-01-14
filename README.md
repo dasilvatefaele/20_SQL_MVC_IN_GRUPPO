@@ -135,8 +135,103 @@ git push origin main
 
 ---
 
+## Da completare
+
+## MODIFICA
+
+CONTROLLER
+Giorgio nome branch **UserController_Edit**
+- [x] aggiunta chiamata a ModificaUser e chiamata crud a ModificaUser
+
+- Modifica implementate
+```csharp
+
+```
+
+```bash
+git pull 
+git add --all
+git commit -m " "
+git push -u origin UserController_Edit
+```
+
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git checkout main
+git merge UserController_Edit
+git push origin main
+```
+
+---
+
+VIEW
+Diego nome branch **modifica_view_user**
 
 
+- Modifica implementata
+```csharp
+ 
+```
+- faccio un push delle modifiche sul branch
+```bash
+git pull 
+git add --all
+git commit -m " "
+git push -u origin modifica_view_user
+```
+
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git checkout main
+git merge modifica_view_user
+git push origin main
+```
+
+---
+
+DATABASE
+Felipe nome branch **database/modifica-user**
+- [x] Impostare comando per modificare user da database
+- [x] Chiamata funzione modifica utente 
+
+- Modifica implementata
+```csharp
+ 
+```
+
+```bash
+git add --all
+git commit -m " "
+git push -u origin database/modifica-user
+```
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git pull
+git checkout main
+git merge database/modifica-user
+git push origin main
+```
+
+---
+
+## Aggiunta campo bool 
+
+Il campo chiamato IsActive
+
+1. Aggiungere campo al modello; (Andrea)
+2. Modifica il Database.cs modificando la query sia di SELECT che di CREATE TABLE; (Diego)
+3. Modifica il View.cs; (Giorgio)
+4. Modifica il Controller.cs; (Felipe)
+
+---
+
+1. Per prima cosa si crea un nuovo branch;
 
 
 > In attesa di spiegazione
