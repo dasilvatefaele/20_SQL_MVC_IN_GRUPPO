@@ -59,6 +59,13 @@ class Database
         }
         return users;
     }
+     
+    //elimina un utente 
+    public void DeleteUser(string id) 
+    {
+        var command = new SQLiteCommand($"DELETE FROM users WHERE id  = '{id}'", _connection);
+        command.ExecuteNonQuery();
+    }
 
     // se la connessione non è chiusa la chiude
     public void CloseConnection()
