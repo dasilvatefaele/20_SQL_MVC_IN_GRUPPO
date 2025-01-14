@@ -26,11 +26,11 @@ creare un catalogo di utenti con funzionalita CRUD usando il pattern MVC e SQLit
 - [x] Creazione Utente
 - [x] Visualizzazione Utenti
 - [x] Eliminare Utente 
+- [ ] Modificare Utente <---
 - [ ] Cercare Utente 
-- [ ] Modificare Utente 
 INPUT: List<User>
+- [x] Gestione input non validi (InputManager) 
 - [ ] Utilizzo di metodo di StampaTabella (Utilities) 
-- [ ] Gestione input non validi (InputManager) 
 
 
 ## DELETE
@@ -137,7 +137,32 @@ git push origin main
 
 ## Da completare
 
-## MODIFICA
+# MODIFICA
+
+> Creazione `EditUser();`
+
+## View.cs - ANDREA
+
+task: 
+aggiorna Menu
+acquisizione scelta cambio di stato (if)
+
+## Database.cs - DIEGO
+argomenti: 
+int id, string nome
+
+task: 
+query SQL per modifica 
+
+## Controller.cs - GIORGIO
+
+task: 
+inserimento in switch
+chiamata funzione
+
+
+
+---
 
 CONTROLLER
  nome branch **UserController_Edit**
