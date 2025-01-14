@@ -140,7 +140,7 @@ git push origin main
 ## MODIFICA
 
 CONTROLLER
-Giorgio nome branch **UserController_Edit**
+ nome branch **UserController_Edit**
 - [x] aggiunta chiamata a ModificaUser e chiamata crud a ModificaUser
 - Modifica implementate
 ```csharp
@@ -160,7 +160,7 @@ git push origin main
 ```
 ---
 VIEW
-Diego nome branch **modifica_view_user**
+ nome branch **modifica_view_user**
 - Modifica implementata
 ```csharp
  
@@ -181,7 +181,7 @@ git push origin main
 ```
 ---
 DATABASE
-Felipe nome branch **database/modifica-user**
+Diego nome branch **database/modifica-user**
 - [x] Impostare comando per modificare user da database
 - [x] Chiamata funzione modifica utente 
 - Modifica implementata
@@ -386,7 +386,21 @@ git push origin main
 ```
 ---
 
-- [ ] Todo Aggiornare il DATABASE con la lista che c'è in runtime
+- [x] Todo Aggiornare il DATABASE con la lista che c'è in runtime
+
+- Creo un nuovo branch `database_editstate_user`;
+
+- Aggiunto EditState()in Database.cs:
+
+```csharp
+public void EditState(int id bool state)
+    {
+        var command = new SQLiteCommand($"UPDATE users SET isactive = '{state}' WHERE id = '{id}';");
+        command.ExecuteNonQuery();
+    }
+```
+
+- [ ] Aggiungere una virgola in public void EditState(int id, bool state)
 
 --- 
 
