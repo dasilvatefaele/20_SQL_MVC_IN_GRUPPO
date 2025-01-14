@@ -71,9 +71,9 @@ class UserController
         var listaTemp = _db.GetUsers();
         foreach (var user in listaTemp)
         {
-            if (user.id == input)
+            if (user.id == int.Parse(input))
             {
-                user.isActive = _view.GetState();
+                user.IsActive = bool.Parse(_view.GetState());
             }
         }
         //  todo AGGIORNARE IL DATABASE con la lista che c'è in runtime 

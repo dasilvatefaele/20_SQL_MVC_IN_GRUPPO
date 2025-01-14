@@ -30,7 +30,7 @@ class Database
     }
 
     // aggiunge un nuovo utente (necessita dell'argomento)
-    public void AddUser(string nome, bool isActive) // aggiungere un utente
+    public void AddUser(string nome, string isActive) // aggiungere un utente
     {
         var command = new SQLiteCommand($"INSERT INTO users (name, isactive) VALUES ('{nome}', '{isActive}')", _connection);
         command.ExecuteNonQuery();
@@ -50,7 +50,7 @@ class Database
             {
                 id = reader.GetInt32(0),
                 nome = reader.GetString(1),
-                isActive = reader.GetBoolean(2)
+                IsActive = bool.Parse(reader.GetString(2))
             });
         }
         return users;

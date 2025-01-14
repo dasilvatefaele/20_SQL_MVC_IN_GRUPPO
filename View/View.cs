@@ -29,11 +29,12 @@ class View
     // View Users
     public void MostraUsers(List<User> users)
     {
+        Console.WriteLine();
         foreach (var user in users)
         {
-            Console.WriteLine($"{user.nome.ToString()} - {user.IsActive.ToString()}");
-
+            Console.WriteLine($"{user.id} - {user.nome} - {user.IsActive.ToString()}");
         }
+        Console.WriteLine();
     }
 
     // acquisizione
@@ -51,16 +52,15 @@ class View
     }
 
     // elimina user
-    public void DeleteUser()
+    public string DeleteUser()
     {
         MostraUsers(_db.GetUsers());
-        string id = InputManager.Stringa("Inscerisci ID da eliminare");
-        _db.DeleteUser(id);
+        return InputManager.LeggiStringa("Inscerisci ID da eliminare");
     }
 
-    public bool GetState()
+    public string GetState()
     {
-        bool stato = Inputmanager.LeggiConferma("L'utente è attivo?");
+        string stato = InputManager.LeggiConferma("L'utente è attivo?").ToString();
         return stato;
     }
 }
