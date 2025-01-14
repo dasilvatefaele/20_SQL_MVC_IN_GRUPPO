@@ -20,7 +20,9 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
-        //Console.WriteLine("3. Elimina user");
+        Console.WriteLine("3. Cerca users");
+        Console.WriteLine("4. Elimina users");
+        Console.WriteLine("5. Modifica users");
         Console.WriteLine("0. Esci");
     }
 
@@ -30,6 +32,7 @@ class View
         foreach (var user in users)
         {
             Console.WriteLine($"{user.nome.ToString()}");
+            //StampaTabella.VisualizzaUser(user);
 
         }
     }
@@ -42,13 +45,23 @@ class View
     }
 
     // legge e restituisce
-    public string AddUser ()
+    public string AddUser()
     {
         Console.WriteLine("Leggi nome utente:");
-        var nome = GetInput();
+        string nome = GetInput();
         return nome;
     }
 
+    public void FoundUser(User user)
+    {
+        Console.WriteLine($"{user.id} - {user.nome}");
+    }
+
+    public int SearchUser()
+    {
+        int id = InputManager.LeggiIntero("inserisci l'id ");
+        return id;
+    }
     public string DeleteUser ()
     {
         Console.WriteLine("Inserisci l'id dell'utente da eliminare:");
