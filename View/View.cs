@@ -20,6 +20,7 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
+        Console.WriteLine("3. Elimina user")
         Console.WriteLine("0. Esci");
     }
 
@@ -32,7 +33,6 @@ class View
 
         }
     }
-
 
     // acquisizione
     public string GetInput()
@@ -48,4 +48,11 @@ class View
         return nome;
     }
 
+    // elimina user
+    public void DeleteUser()
+    {
+        MostraUsers(_db.GetUsers());
+        string id = InputManager.Stringa("Inscerisci ID da eliminare");
+        _db.DeleteUser(id);
+    }
 }
