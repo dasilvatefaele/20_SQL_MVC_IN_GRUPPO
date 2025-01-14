@@ -42,9 +42,10 @@ INPUT: List<User>
 
 UTILITIES
 ---
-- [ ] Gestione input non validi (InputManager) (DIEGO)
+- [x] Gestione input non validi (InputManager) (DIEGO)
 ---
 
+- [x] Aggiunto Database al .gitignore (*.db)
 
 > In attesa di spiegazione
 
@@ -74,10 +75,12 @@ Per ora abbiamo intuito che la procedura per unire i branch si compone come segu
 1. Ognuno crea un proprio branch, fa un pull dell'`origin`, poi fa le modifiche
 2. Esegue commit frequenti e una volta verificato che il codice funziona fa il `git push -u origin update/nome-branch`
 3. Chi finisce la propria task fa una Pull Request agli altri sviluppatori affinche individualmente risolvino i conflitti col proprio branch (anche se in corso d'opera)
-4. Quindi ognuno fa un `git pull feature/nome-branch` (?)
-5. Una volta terminato e verificato che tutto funzioni su ogni branch si esegue il merge con il main
-6. `git branch --all` per avere la versione più aggiornata del repository
-7. ci si sposta sul main, si fa il `git pull origin main`
-8. `git merge feature/nome-branch`
-9. si risolvono gli eventuali conflitti
-10. `git add --all`, `git commit -m "merge completato"`, `git push origin main`
+4. Una volta terminato e verificato che tutto funzioni su ogni branch si esegue il merge con il main
+5. `git branch --all` per vedere tutti i branch disponibili in locale 
+6. `git fetch origin` per avere la versione più aggiornata del repository
+7. Quindi ognuno fa un `git pull feature/nome-branch` (dopo aver risolto i conflitti e fatto un push del proprio branch)
+8. ci si sposta sul main, si fa il `git pull origin main`
+9. `git merge feature/nome-branch`
+10. si risolvono gli eventuali conflitti
+11. `git add --all`, `git commit -m "merge completato"`, `git push origin main`
+12. per nuove modifiche, aggiornare il proprio main locale andando sul main, `git pull origin main`, nuovo branch, e implementare sul nuovo branch partendo dalla versione più aggiornata del main

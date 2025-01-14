@@ -41,7 +41,7 @@ class View
     // acquisizione
     public string GetInput()
     {
-        return Console.ReadLine(); // Lettura dell'input dell'utente
+        return InputManager.LeggiStringa(""); // Lettura dell'input dell'utente
     }
 
     // legge e restituisce
