@@ -25,25 +25,118 @@ creare un catalogo di utenti con funzionalita CRUD usando il pattern MVC e SQLit
 
 - [x] Creazione Utente
 - [x] Visualizzazione Utenti
+- [x] Eliminare Utente 
+- [ ] Cercare Utente 
+- [ ] Modificare Utente 
+INPUT: List<User>
+- [ ] Utilizzo di metodo di StampaTabella (Utilities) 
+- [ ] Gestione input non validi (InputManager) 
+
+
+## DELETE
 
 CONTROLLER
----
-- [ ] Cercare Utente (DIEGO)
+Andrea nome branch **UserController_Delete**
+- [x] aggiunta chiamata a DeleteUser e chiamata crud a DeleteUser
 
-- [ ] Modificare Utente (ANDREA)  
-- [ ] Eliminare Utente (ANDREA)
+- Modifica implementate
+```csharp
+case "3":
+    DeleteUser();
+    return true;
+
+private void DeleteUser()
+    {
+        _db.DeleteUser(_view.DeleteUser());
+    }
+```
+
+```bash
+git pull 
+git add --all
+git commit -m "CONTROLLER: aggiunta chiamata DeleteUser() e rispettiva operzione crud"
+git push -u origin UserController_Delete
+```
+
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git checkout main
+git merge UserController_Delete
+git push origin main
+```
+
 ---
 
 VIEW
----
-INPUT: List<User>
-- [ ] Utilizzo di metodo di StampaTabella (Utilities) (FELIPE) (GIORGIO)
+Felipe nome branch **view_user_delete**
+- [x] stampa a terminale di lista Utenti prima di inserimento id (verrà passato a database)
+- [x] aggiunta scelta di elimina utente su stampa di menù
+
+- Modifica implementata
+```csharp
+ Console.WriteLine("3. Elimina user")
+
+  public void DeleteUser()
+    {
+        MostraUsers(_db.GetUsers());
+        string id = InputManager.Stringa("Inscerisci ID da eliminare");
+        _db.DeleteUser(id);
+    }
+```
+- faccio un push delle modifiche sul branch
+```bash
+git pull 
+git add --all
+git commit -m "VIEW: aggiunto alla vista elimina utente implementata chiamata al database"
+git push -u origin view_user_delete
+```
+
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git checkout main
+git merge view_user_delete
+git push origin main
+```
+
 ---
 
-UTILITIES
+DATABASE
+Giorgio nome branch **database**
+- [x] Impostare comando per eliminare user da database
+- [x] Chiamata funzione elimina utente 
+
+- Modifica implementata
+```csharp
+ public void DeleteUser(string id) 
+    {
+        var command = new SQLiteCommand($"DELETE FROM users WHERE id  = '{id}'", _connection);
+        command.ExecuteNonQuery();
+    }
+```
+
+```bash
+git add --all
+git commit -m "database_delete_user"
+git push -u origin database
+```
+- [x] Approvato da host
+
+- Merge dell'host
+```bash
+git pull
+git checkout main
+git merge database
+git push origin main
+```
+
 ---
-- [ ] Gestione input non validi (InputManager) (DIEGO)
----
+
+
+
 
 
 > In attesa di spiegazione
