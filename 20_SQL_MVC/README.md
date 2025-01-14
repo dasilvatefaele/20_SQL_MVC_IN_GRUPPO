@@ -81,3 +81,4 @@ Per ora abbiamo intuito che la procedura per unire i branch si compone come segu
 8. `git merge feature/nome-branch`
 9. si risolvono gli eventuali conflitti
 10. `git add --all`, `git commit -m "merge completato"`, `git push origin main`
+11. per nuove modifiche, aggiornare il proprio main locale andando sul main, `git pull origin main`, nuovo branch, e implementare sul nuovo branch partendo dalla versione più aggiornata del main
