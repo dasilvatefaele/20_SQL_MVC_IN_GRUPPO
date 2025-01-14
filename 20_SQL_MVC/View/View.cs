@@ -1,3 +1,4 @@
+using System.Data;
 using System.Data.SQLite;
 
 class View
@@ -19,6 +20,9 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
+        Console.WriteLine("3. Cerca users");
+        Console.WriteLine("4. Elimina users");
+        Console.WriteLine("5. Modifica users");
         Console.WriteLine("0. Esci");
     }
 
@@ -28,6 +32,7 @@ class View
         foreach (var user in users)
         {
             Console.WriteLine($"{user.nome.ToString()}");
+            //StampaTabella.VisualizzaUser(user);
 
         }
     }
@@ -43,7 +48,7 @@ class View
     public string AddUser()
     {
         Console.WriteLine("Leggi nome utente:");
-        string nome = InputManager.LeggiStringa("Leggi nome utente:");
+        string nome = GetInput();
         return nome;
     }
 
@@ -55,6 +60,12 @@ class View
     public int SearchUser()
     {
         int id = InputManager.LeggiIntero("inserisci l'id ");
+        return id;
+    }
+    public string DeleteUser ()
+    {
+        Console.WriteLine("Inserisci l'id dell'utente da eliminare:");
+        var id = GetInput();
         return id;
     }
 
