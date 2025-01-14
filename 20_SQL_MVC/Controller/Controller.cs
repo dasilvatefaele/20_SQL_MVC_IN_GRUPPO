@@ -29,7 +29,7 @@ class UserController
                 return true;
                 break;
             case "3":
-                //DeleteUser();
+                DeleteUser();
                 return true;
             case "0":
                 _db.CloseConnection();
