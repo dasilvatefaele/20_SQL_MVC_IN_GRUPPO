@@ -32,6 +32,9 @@ class UserController
                 DeleteUser();
                 return true;
                 break;
+            case "4":
+                EditState();
+                return true;
             case "0":
                 _db.CloseConnection();
                 return false;
@@ -47,7 +50,7 @@ class UserController
     // CRUD: ---------------------------------------
     private void AddUser()
     {
-        _db.AddUser(_view.AddUser());
+        _db.AddUser(_view.AddUser(),_view.GetState());
     }
 
     private void DeleteUser()
@@ -59,5 +62,20 @@ class UserController
     {
         var user = _db.GetUsers();
         _view.MostraUsers(user);
+    }
+
+    private void EditState()
+    {
+        ShowUsers();
+        var input = InputManager.LeggiStringa("Inserisci ID del quale vuoi cambiare stato");
+        var listaTemp = _db.GetUsers();
+        foreach (var user in listaTemp)
+        {
+            if (user.id == input)
+            {
+                user.isActive = _view.GetState();
+            }
+        }
+        //  todo AGGIORNARE IL DATABASE con la lista che c'è in runtime 
     }
 }
