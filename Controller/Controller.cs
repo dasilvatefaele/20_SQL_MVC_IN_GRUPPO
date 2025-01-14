@@ -77,5 +77,13 @@ class UserController
             }
         }
         //  todo AGGIORNARE IL DATABASE con la lista che c'è in runtime 
+        //*  _db.EditState(int.Parse(input), bool.Parse(_view.GetState));
+        
+        //  necessaria funzione EditState in Database.cs
+        //  public void EditState (int id, bool state)
+        //  DESCRIZIONE: 
+        //  funzione void con argomenti (int id, bool state) 
+        //  eseguire comando query per aggiornare lo stato dell'utente 
+        //  con ID ricevuto come argomento  
     }
 }
