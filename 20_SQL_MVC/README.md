@@ -74,10 +74,10 @@ Per ora abbiamo intuito che la procedura per unire i branch si compone come segu
 1. Ognuno crea un proprio branch, fa un pull dell'`origin`, poi fa le modifiche
 2. Esegue commit frequenti e una volta verificato che il codice funziona fa il `git push -u origin update/nome-branch`
 3. Chi finisce la propria task fa una Pull Request agli altri sviluppatori affinche individualmente risolvino i conflitti col proprio branch (anche se in corso d'opera)
-4. Quindi ognuno fa un `git pull feature/nome-branch`
+4. Quindi ognuno fa un `git pull feature/nome-branch` (?)
 5. Una volta terminato e verificato che tutto funzioni su ogni branch si esegue il merge con il main
-6. ci si sposta sul main, si fa il `git pull origin main`
-7. `git branch --all` per avere la versione più aggiornata del repository
+6. `git branch --all` per avere la versione più aggiornata del repository
+7. ci si sposta sul main, si fa il `git pull origin main`
 8. `git merge feature/nome-branch`
 9. si risolvono gli eventuali conflitti
 10. `git add --all`, `git commit -m "merge completato"`, `git push origin main`
