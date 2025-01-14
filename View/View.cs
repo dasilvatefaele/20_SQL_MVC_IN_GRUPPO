@@ -9,6 +9,7 @@ class View
     //? Quindi si può dire che il View si occupa di stampa e acquisizione?
 
     private Database _db;
+
     public View(Database db) // costruttore che prende in input il modello del database
     {
         _db = db; // inizializiamo il riferimento del modello
@@ -20,7 +21,8 @@ class View
     {
         Console.WriteLine("1. Aggiungi user");
         Console.WriteLine("2. Leggi users");
-        Console.WriteLine("3. Elimina user")
+        Console.WriteLine("3. Elimina user");
+        Console.WriteLine("4. Modifica stato");
         Console.WriteLine("0. Esci");
     }
 
@@ -29,7 +31,7 @@ class View
     {
         foreach (var user in users)
         {
-            Console.WriteLine($"{user.nome.ToString()}");
+            Console.WriteLine($"{user.nome.ToString()} - {user.IsActive.ToString()}");
 
         }
     }
@@ -54,5 +56,11 @@ class View
         MostraUsers(_db.GetUsers());
         string id = InputManager.Stringa("Inscerisci ID da eliminare");
         _db.DeleteUser(id);
+    }
+
+    public bool GetState()
+    {
+        bool stato = Inputmanager.LeggiConferma("L'utente è attivo?");
+        return stato;
     }
 }
