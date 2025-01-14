@@ -22,7 +22,7 @@ class Database
 
         _connection.Open();
         string sql = @"
-            CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT)
+            CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, isactive BOOLEAN)
         ";
         var command = new SQLiteCommand(sql, _connection);
         command.ExecuteNonQuery();
@@ -30,9 +30,9 @@ class Database
     }
 
     // aggiunge un nuovo utente (necessita dell'argomento)
-    public void AddUser(string nome) // aggiungere un utente
+    public void AddUser(string nome, bool isActive) // aggiungere un utente
     {
-        var command = new SQLiteCommand($"INSERT INTO users (name) VALUES ('{nome}')", _connection);
+        var command = new SQLiteCommand($"INSERT INTO users (name, isactive) VALUES ('{nome}', '{isActive}')", _connection);
         command.ExecuteNonQuery();
 
     }
@@ -49,13 +49,9 @@ class Database
             users.Add(new User
             {
                 id = reader.GetInt32(0),
-                nome = reader.GetString(1)
+                nome = reader.GetString(1),
+                isActive = reader.GetBoolean(2)
             });
-            
-            //users.Add(reader.GetString(0));
-            // Aggiunta del nome dell'utente alla lista, 
-            // IMPORTANTE: GetString(0) dove 0 è l'indice della colonna "nome" 
-
         }
         return users;
     }
