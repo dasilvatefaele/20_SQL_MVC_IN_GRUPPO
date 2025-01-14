@@ -1,3 +1,4 @@
+using System.Data;
 using System.Data.SQLite;
 
 class View
@@ -40,22 +41,11 @@ class View
     }
 
     // legge e restituisce
-    public string AddUser()
+    public string AddUser ()
     {
         Console.WriteLine("Leggi nome utente:");
-        string nome = InputManager.LeggiStringa("Leggi nome utente:");
+        var nome = GetInput();
         return nome;
-    }
-
-    public void FoundUser(User user)
-    {
-        Console.WriteLine($"{user.id} - {user.nome}");
-    }
-
-    public int SearchUser()
-    {
-        int id = InputManager.LeggiIntero("inserisci l'id ");
-        return id;
     }
 
 }

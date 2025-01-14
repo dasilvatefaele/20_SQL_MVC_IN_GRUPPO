@@ -1,3 +1,6 @@
+using System.Data;
+using System.Data.Entity.Core.Common.EntitySql;
+using System.Data.SqlClient;
 using System.Data.SQLite;
 
 class Database
@@ -5,12 +8,7 @@ class Database
     private SQLiteConnection _connection;
     // connessione al database che è privaata perché non deve essere accessibile dall'esterno
     // utilizziamo _ davanti al nome per indicare che è una variabile privata
-
-    private View _view;
-    private Database _db;
     private string path = @"data/database.db";
-
-    
 
     public Database() // costruttore della classe database
     {
@@ -18,9 +16,6 @@ class Database
         {
             SQLiteConnection.CreateFile(path);
         }
-
-        // _db = new Database();
-        // _view = new View(_db);
 
         _connection = new SQLiteConnection($"Data Source={path};Version=3;"); // creiamo una connessione al database
         // _connection = new SQLiteConnection($"Data Source={path};Version=3;"); // creiamo una connessione al database
@@ -39,13 +34,7 @@ class Database
     {
         var command = new SQLiteCommand($"INSERT INTO users (name) VALUES ('{nome}')", _connection);
         command.ExecuteNonQuery();
-    }
 
-    //elimina un utente 
-    public void DeleteUser(string id) // eliminare un utente
-    {
-        var command = new SQLiteCommand($"DELETE FROM users WHERE id  = '{id}'", _connection);
-        command.ExecuteNonQuery();
     }
 
     // ottenere lista utenti, non li stampa, li restituisce solo, perché la stampa appartiene al View
@@ -71,22 +60,6 @@ class Database
         return users;
     }
 
-
-    public User SearchUser(List<User> lista, int id)
-    {
-
-        foreach (var user in lista)
-        {
-            if (user.id == id)
-            {
-                return user;
-            }
-        }
-
-        return null;
-    }
-
-
     // se la connessione non è chiusa la chiude
     public void CloseConnection()
     {
@@ -94,21 +67,6 @@ class Database
         {
             _connection.Close();
         }
-    }
-
-    public void EditUser(string id)
-    {
-        var command = new SQLiteCommand($"SELECT * FROM users WHERE id = {id}", _connection);
-        var reader = command.ExecuteReader();
-        
-        if (reader != null)
-        {
-            Console.WriteLine("Nuovo nome:");
-            string nuovoNome = Console.ReadLine();
-            command = new SQLiteCommand($"UPDATE users SET name = '{nuovoNome}' WHERE id = {id}",_connection);
-            command.ExecuteNonQuery();
-        }
-        reader.Close();
     }
 
 }

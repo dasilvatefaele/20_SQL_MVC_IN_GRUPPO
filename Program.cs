@@ -12,6 +12,7 @@ class Program
         while (continua)
         {
             continua = controller.MainMenu(); // Metodo per gestire il menu principale
+
         }
     }
 }
