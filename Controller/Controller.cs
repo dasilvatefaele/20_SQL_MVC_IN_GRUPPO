@@ -76,6 +76,7 @@ class UserController
                 user.IsActive = bool.Parse(_view.GetState());
             }
         }
+        
         //  todo AGGIORNARE IL DATABASE con la lista che c'è in runtime 
         //*  _db.EditState(int.Parse(input), bool.Parse(_view.GetState));
         

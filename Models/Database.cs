@@ -63,6 +63,13 @@ class Database
         command.ExecuteNonQuery();
     }
 
+    // edit state
+    public void EditState(int id bool state)
+    {
+        var command = new SQLiteCommand($"UPDATE users SET isactive = '{state}' WHERE id = '{id}';");
+        command.ExecuteNonQuery();
+    }
+
     // se la connessione non è chiusa la chiude
     public void CloseConnection()
     {
